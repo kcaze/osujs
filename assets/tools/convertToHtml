@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+import argparse, os, re, sys
+
+def generateHTML(directory, fname):
+  sections = {}
+  section = []
+
+  title = ""
+  artist = ""
+  difficulty = ""
+  music = ""
+  osu = os.path.join(directory, fname)
+
+  f = open(osu, "rU")
+  for line in f.readlines():
+    line = line.strip()
+    if line and line[0] == "[" and line[-1] == "]":
+      section = []
+      sections[line[1:-1]] = section
+    else:
+      if line:
+        section.append(line)
+
+  for line in sections["General"]:
+    fields = line.split(":")
+    if fields[0] == "AudioFilename":
+      music = os.path.join(directory,fields[1].strip())
+
+  for line in sections["Metadata"]:
+    fields = line.split(":")
+    if fields[0] == "Title":
+      title = fields[1].strip()
+    elif fields[0] == "Artist":
+      artist = fields[1].strip()
+    elif fields[0] == "Version":
+      difficulty = fields[1].strip()
+
+  ID = re.sub(r'\W+', '', title+difficulty)
+
+  print """ 
+<a href="#" class="list-group-item" id="{0}" 
+ onclick="site.beatmaps.handleClick('#{0}');"
+ songTitle="{1}"
+ artist="{2}"
+ difficulty="{3}"
+ osu="{4}"
+ music="{5}">
+  <h3 class="list-group-item-heading">{1} [{3}]</h3>
+  <p class="list-group-item-text">{2}</p>
+</a>
+""".format(ID, title, artist, difficulty, osu, music)
+
+  f.close()
+
+parser = argparse.ArgumentParser()
+parser.add_argument("directory")
+parser.parse_args()
+
+directory = parser.parse_args().directory
+
+if not os.path.isdir(directory):
+  print directory, ": No such directory"
+  sys.exit()
+
+for root, dirs, files in os.walk(directory):
+  for fname in files:
+    if fname[-4:] == ".osu":
+      generateHTML(directory, fname)

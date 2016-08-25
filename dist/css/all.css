@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "ABeeZee";
+  src: url("ABeeZee.ttf");
+}
+
+body { 
+  padding-top: 60px;
+  color: #777777;
+}
+
+h1, h2 {
+  color: #ffa0b0;
+}
+
+.navbar {
+  background-color: #ffe0f0;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background-color: #ffb0c0;
+}
+
+a.list-group-item.active .list-group-item-text {
+  color: #ffffff;
+}
+
+a.list-group-item:hover,
+a.list-group-item:focus {
+  background-color: #ffe0f0;
+}
+
+a.list-group-item.active {
+  background-color: #ffb0c0;
+  border-color: #ffb0c0;
+}
+
+#osujs_canvas {
+  margin: 0.67em 0;
+  border: 1px solid #e0e0e0; 
+}
+

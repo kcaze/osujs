@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/beat.js - osujs!</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="http://nagisa.stanford.edu/osu/images/osulogo.png" title="osujs!"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: Andromeda 1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Beatmap.html">Beatmap</a></li>
+            
+                <li><a href="../classes/Bezier.html">Bezier</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src/beat.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+var Beat = (function () {
+  var beat = function (properties) {
+    this.initialize(properties);
+  };
+
+  beat.prototype = new createjs.Container();
+  beat.prototype.containerInit = beat.prototype.initialize;
+  beat.prototype.initialize = function (properties) {
+    this.containerInit();
+
+    //FIXME: pretty bad here
+    if (properties) { //stupid way for slider and beatmap to extend. How to do this right?
+      //initialize properties
+      for (var p in properties) 
+        this[p] = properties[p];
+  
+      //a bunch of stuff that&#x27;s not organized
+      this.approachCircle = this.addChild(this.ApproachCircle());
+      this.scaleX = this.scaleY = bbeatmap.data.difficulty.CircleSize;
+      this.alpha = 0;
+    }
+  };
+
+/**
+ * FIXME: This function should be removed. 
+ *
+ * @method score
+ **/
+  beat.prototype.score = function (s) {
+    this.dispatchEvent({ type : &quot;score&quot;, score : s });
+    this.die();
+  };
+
+/**
+ * Sets up approachCircle. 
+ *
+ * @method begin
+ **/
+  beat.prototype.begin = function () {
+    createjs.Ticker.addEventListener(&quot;tick&quot;, this);
+
+    var img_approachcircle = assets.get(&quot;img_approachcircle&quot;);
+    this.approachRate = this.t - mmusic.getPosition();
+
+    TweenLite.to(this, 0.1, {
+      alpha : 1,
+      ease : Linear.easeNone,
+    });
+    TweenLite.to(this.approachCircle, this.approachRate/1000, {
+      scaleX : bbeatmap.data.difficulty.CircleSize,
+      scaleY : bbeatmap.data.difficulty.CircleSize,
+      ease : Linear.easeNone,
+      onComplete : function () {
+        this.removeChild(this.approachCircle);
+      }.bind(this),
+    });
+  };
+
+/**
+ * FIXME: rename as end()
+ * Cleans up beat. 
+ *
+ * @method die
+ **/
+
+  beat.prototype.die = function () {
+    createjs.Ticker.removeEventListener(&quot;tick&quot;, this);
+    TweenLite.to([this], 0.1, {
+      alpha : 0,
+      ease : Linear.easeNone,
+      onComplete : function () {
+        bbeatmap.removeChild(this);
+      }.bind(this),
+    });
+  };
+
+/**
+ * Returns a hitcircle bitmap.
+ *
+ * @method HitCircle
+ **/
+  beat.prototype.HitCircle = function () {
+    var img_hitcircle = assets.get(&quot;img_hitcircle&quot;);
+    var img_hitcircleoverlay = assets.get(&quot;img_hitcircleoverlay&quot;);
+    var circleSize = bbeatmap.data.difficulty.CircleSize;
+    var hitCircle = new createjs.Container();
+    var hitCircleImage = new createjs.Bitmap(img_hitcircle);
+    var hitArea = new createjs.Shape();
+    var hitCircleOverlay = new createjs.Bitmap(img_hitcircleoverlay);
+
+    hitCircleImage.regX = hitCircleImage.regY = img_hitcircle.width / 2;
+    hitCircleImage.scaleX = hitCircleImage.scaleY = circleSize;
+
+    hitArea.graphics.f(&quot;rgb(0,0,0)&quot;).dc(0,0,circleSize*img_hitcircle.width/2 - 5); 
+    hitCircleImage.hitArea = hitArea
+
+    hitCircleOverlay.regX = hitCircleOverlay.regY = img_hitcircleoverlay.width/2;
+    hitCircleOverlay.scaleX = hitCircleOverlay.scaleY = circleSize;
+
+    hitCircleImage.filters = [
+      new createjs.ColorFilter(this.color[0]/255, this.color[1]/255, this.color[2]/255, 1, 0,0,0,0)
+    ];
+    hitCircleImage.cache(0, 0, img_hitcircle.width, img_hitcircle.height);
+    
+    hitCircle.addChild(hitCircleImage);
+    hitCircle.addChild(hitCircleOverlay);
+
+    return hitCircle;
+  };
+
+/**
+ * Returns an approachcircle bitmap.
+ *
+ * @method ApproachCircle
+ **/
+
+  beat.prototype.ApproachCircle = function () {
+    var img_approachcircle = assets.get(&quot;img_approachcircle&quot;);
+    var approachCircle = new createjs.Bitmap(img_approachcircle);
+    approachCircle.regX = approachCircle.regY = img_approachcircle.width/2;
+    approachCircle.scaleX = approachCircle.scaleY = 3*bbeatmap.data.difficulty.CircleSize;
+
+    approachCircle.filters = [
+      new createjs.ColorFilter(this.color[0]/255, this.color[1]/255, this.color[2]/255, 1, 0,0,0,0)
+    ];
+    approachCircle.cache(0, 0, img_approachcircle.width, img_approachcircle.height);
+
+    return approachCircle;
+  };
+
+
+  return beat;
+}());
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

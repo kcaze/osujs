@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for f in *.osz
+do
+  rename .osz .zip f
+done
+
+for f in *.zip
+do
+  mkdir "${f/%.zip/}"
+  unzip -d "${f/%.zip/}" "$f"
+  rm "$f"
+done

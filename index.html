@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>osuJS!</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+  </head>
+
+  <body onLoad="osujs.initialize();">
+    <div class="container">
+
+      <div class="navbar navbar-fixed-top">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#game" data-toggle="tab">osujs!</a></li>
+          <li><a href="#beatmaps" data-toggle="tab">beatmaps</a></li>
+          <li><a href="#options" data-toggle="tab">options</a></li>
+          <li><a href="#changelog" data-toggle="tab">changelog</a></li>
+        </ul>
+        <p class="navbar-text pull-right" id="currentbeatmap">
+          No beatmap selected
+        </p>
+      </div>
+
+      <br>
+
+      <div class="tab-content">
+        <!-- osujs! game tab -->
+        <div class="tab-pane active fade in" id="game">
+          <canvas id="osujs_canvas" onmousedown="event.preventDefault()"> 
+            Your browser does not support the HTML5 Canvas element.
+          </canvas>
+        </div>
+
+        <!-- beatmap selection tab -->
+        <div class="tab-pane fade" id="beatmaps">
+        </div>
+
+        <!-- options tab -->
+        <div class="tab-pane fade" id="options">
+        </div>
+
+        <!-- changelog tab -->
+        <div class="tab-pane fade" id="changelog">
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p class="text-muted">
+          Graphics and sound effects taken from <a href="http://osu.ppy.sh">osu!</a> with permission from peppy.
+          <br>
+          osujs! uses the <a href="http://createjs.com">CreateJS</a> library.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Site dependencies -->
+    <script src="cdn/jquery-2.0.3.min.js"></script>
+    <script src="cdn/bootstrap.min.js"></script>
+    <script src="cdn/parallel.js"></script>
+
+    <!-- load tabs -->
+    <script>
+      $("#options").load("options.html");
+      $("#changelog").load("changelog.html");
+      $("#beatmaps").load("beatmaps.html");
+    </script>
+
+    <!-- osujs! dependencies -->
+    <script src="cdn/curve.js"></script>
+    <script src="cdn/easeljs-0.6.1.min.js"></script>
+    <script src="cdn/preloadjs-NEXT.min.js"></script>
+    <script src="cdn/soundjs-NEXT.min.js"></script>
+    <script src="cdn/tweenjs-NEXT.min.js"></script>
+    <script src="cdn/Filter.js"></script>
+    <script src="cdn/ColorFilter.js"></script>
+
+    <!-- My code -->
+    <script src="js/osu.js"></script>
+    <script src="js/site.js"></script>
+
+
+  </body>
+
+</html>
+

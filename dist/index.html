@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>osuJS!</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+
+  <body onLoad="osujs.initialize();">
+    <div class="container">
+
+      <div class="navbar navbar-fixed-top">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#game" data-toggle="tab">osujs!</a></li>
+          <li><a href="#beatmaps" data-toggle="tab">beatmaps</a></li>
+          <li><a href="#options" data-toggle="tab">options</a></li>
+          <li><a href="#changelog" data-toggle="tab">changelog</a></li>
+        </ul>
+        <p class="navbar-text pull-right" id="currentbeatmap">
+          No beatmap selected
+        </p>
+      </div>
+
+      <br>
+
+      <div class="tab-content">
+        <!-- osujs! game tab -->
+        <div class="tab-pane active fade in" id="game">
+          <canvas id="osujs_canvas" onmousedown="event.preventDefault()"> 
+            Your browser does not support the HTML5 Canvas element.
+          </canvas>
+        </div>
+
+        <!-- beatmap selection tab -->
+        <div class="tab-pane fade" id="beatmaps">
+        <ul class="list-group"> 
+        <a href="#" class="list-group-item" id="GracefulAnomalyMochi" 
+         onclick="site.beatmaps.handleClick('#GracefulAnomalyMochi');"
+         songTitle="Graceful Anomaly"
+         artist="ave;new feat. Sakura Saori"
+         difficulty="Mochi"
+         osu="./102084 ave;new feat. Sakura Saori - Graceful Anomaly/ave;new feat. Sakura Saori - Graceful Anomaly (Momochikun) [Mochi].osu"
+         music="./102084 ave;new feat. Sakura Saori - Graceful Anomaly/Hwakakaka.mp3">
+          <h3 class="list-group-item-heading">Graceful Anomaly [Mochi]</h3>
+          <p class="list-group-item-text">ave;new feat. Sakura Saori</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="GracefulAnomalyXinelysHard" 
+         onclick="site.beatmaps.handleClick('#GracefulAnomalyXinelysHard');"
+         songTitle="Graceful Anomaly"
+         artist="ave;new feat. Sakura Saori"
+         difficulty="Xinely's Hard"
+         osu="./102084 ave;new feat. Sakura Saori - Graceful Anomaly/ave;new feat. Sakura Saori - Graceful Anomaly (Momochikun) [Xinely's Hard].osu"
+         music="./102084 ave;new feat. Sakura Saori - Graceful Anomaly/Hwakakaka.mp3">
+          <h3 class="list-group-item-heading">Graceful Anomaly [Xinely's Hard]</h3>
+          <p class="list-group-item-text">ave;new feat. Sakura Saori</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="GracefulAnomalyHinsvarsNormal" 
+         onclick="site.beatmaps.handleClick('#GracefulAnomalyHinsvarsNormal');"
+         songTitle="Graceful Anomaly"
+         artist="ave;new feat. Sakura Saori"
+         difficulty="Hinsvar's Normal"
+         osu="./102084 ave;new feat. Sakura Saori - Graceful Anomaly/ave;new feat. Sakura Saori - Graceful Anomaly (Momochikun) [Hinsvar's Normal].osu"
+         music="./102084 ave;new feat. Sakura Saori - Graceful Anomaly/Hwakakaka.mp3">
+          <h3 class="list-group-item-heading">Graceful Anomaly [Hinsvar's Normal]</h3>
+          <p class="list-group-item-text">ave;new feat. Sakura Saori</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="ImABelieverEasy" 
+         onclick="site.beatmaps.handleClick('#ImABelieverEasy');"
+         songTitle="I'm A Believer"
+         artist="Smash Mouth"
+         difficulty="Easy"
+         osu="./102615 Smash Mouth - I'm A Believer/Smash Mouth - I'm A Believer (CDFA) [Easy].osu"
+         music="./102615 Smash Mouth - I'm A Believer/Smash-Mouth-Im-A-Believer-Shrek-version.mp3">
+          <h3 class="list-group-item-heading">I'm A Believer [Easy]</h3>
+          <p class="list-group-item-text">Smash Mouth</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="ImABelieverGerosNormal" 
+         onclick="site.beatmaps.handleClick('#ImABelieverGerosNormal');"
+         songTitle="I'm A Believer"
+         artist="Smash Mouth"
+         difficulty="Gero's Normal"
+         osu="./102615 Smash Mouth - I'm A Believer/Smash Mouth - I'm A Believer (CDFA) [Gero's Normal].osu"
+         music="./102615 Smash Mouth - I'm A Believer/Smash-Mouth-Im-A-Believer-Shrek-version.mp3">
+          <h3 class="list-group-item-heading">I'm A Believer [Gero's Normal]</h3>
+          <p class="list-group-item-text">Smash Mouth</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="ImABelieverHard" 
+         onclick="site.beatmaps.handleClick('#ImABelieverHard');"
+         songTitle="I'm A Believer"
+         artist="Smash Mouth"
+         difficulty="Hard"
+         osu="./102615 Smash Mouth - I'm A Believer/Smash Mouth - I'm A Believer (CDFA) [Hard].osu"
+         music="./102615 Smash Mouth - I'm A Believer/Smash-Mouth-Im-A-Believer-Shrek-version.mp3">
+          <h3 class="list-group-item-heading">I'm A Believer [Hard]</h3>
+          <p class="list-group-item-text">Smash Mouth</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="VitalizationTVSizeEasy" 
+         onclick="site.beatmaps.handleClick('#VitalizationTVSizeEasy');"
+         songTitle="Vitalization (TV Size)"
+         artist="Mizuki Nana"
+         difficulty="Easy"
+         osu="./102803 Mizuki Nana - Vitalization (TV Size)/Mizuki Nana - Vitalization (TV Size) (Flower) [Easy].osu"
+         music="./102803 Mizuki Nana - Vitalization (TV Size)/Vitalization.mp3">
+          <h3 class="list-group-item-heading">Vitalization (TV Size) [Easy]</h3>
+          <p class="list-group-item-text">Mizuki Nana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="VitalizationTVSizeOni" 
+         onclick="site.beatmaps.handleClick('#VitalizationTVSizeOni');"
+         songTitle="Vitalization (TV Size)"
+         artist="Mizuki Nana"
+         difficulty="Oni"
+         osu="./102803 Mizuki Nana - Vitalization (TV Size)/Mizuki Nana - Vitalization (TV Size) (Flower) [Oni].osu"
+         music="./102803 Mizuki Nana - Vitalization (TV Size)/Vitalization.mp3">
+          <h3 class="list-group-item-heading">Vitalization (TV Size) [Oni]</h3>
+          <p class="list-group-item-text">Mizuki Nana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="VitalizationTVSizeInsane" 
+         onclick="site.beatmaps.handleClick('#VitalizationTVSizeInsane');"
+         songTitle="Vitalization (TV Size)"
+         artist="Mizuki Nana"
+         difficulty="Insane"
+         osu="./102803 Mizuki Nana - Vitalization (TV Size)/Mizuki Nana - Vitalization (TV Size) (Flower) [Insane].osu"
+         music="./102803 Mizuki Nana - Vitalization (TV Size)/Vitalization.mp3">
+          <h3 class="list-group-item-heading">Vitalization (TV Size) [Insane]</h3>
+          <p class="list-group-item-text">Mizuki Nana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="VitalizationTVSizeHard" 
+         onclick="site.beatmaps.handleClick('#VitalizationTVSizeHard');"
+         songTitle="Vitalization (TV Size)"
+         artist="Mizuki Nana"
+         difficulty="Hard"
+         osu="./102803 Mizuki Nana - Vitalization (TV Size)/Mizuki Nana - Vitalization (TV Size) (Flower) [Hard].osu"
+         music="./102803 Mizuki Nana - Vitalization (TV Size)/Vitalization.mp3">
+          <h3 class="list-group-item-heading">Vitalization (TV Size) [Hard]</h3>
+          <p class="list-group-item-text">Mizuki Nana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="VitalizationTVSizeMuzukashii" 
+         onclick="site.beatmaps.handleClick('#VitalizationTVSizeMuzukashii');"
+         songTitle="Vitalization (TV Size)"
+         artist="Mizuki Nana"
+         difficulty="Muzukashii"
+         osu="./102803 Mizuki Nana - Vitalization (TV Size)/Mizuki Nana - Vitalization (TV Size) (Flower) [Muzukashii].osu"
+         music="./102803 Mizuki Nana - Vitalization (TV Size)/Vitalization.mp3">
+          <h3 class="list-group-item-heading">Vitalization (TV Size) [Muzukashii]</h3>
+          <p class="list-group-item-text">Mizuki Nana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="VitalizationTVSizeNormal" 
+         onclick="site.beatmaps.handleClick('#VitalizationTVSizeNormal');"
+         songTitle="Vitalization (TV Size)"
+         artist="Mizuki Nana"
+         difficulty="Normal"
+         osu="./102803 Mizuki Nana - Vitalization (TV Size)/Mizuki Nana - Vitalization (TV Size) (Flower) [Normal].osu"
+         music="./102803 Mizuki Nana - Vitalization (TV Size)/Vitalization.mp3">
+          <h3 class="list-group-item-heading">Vitalization (TV Size) [Normal]</h3>
+          <p class="list-group-item-text">Mizuki Nana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MonochromeHAPPYDAYTVSizeWhite" 
+         onclick="site.beatmaps.handleClick('#MonochromeHAPPYDAYTVSizeWhite');"
+         songTitle="Monochrome*HAPPY DAY (TV Size)"
+         artist="Hanazawa Kana"
+         difficulty="White"
+         osu="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Hanazawa Kana - MonochromeHAPPY DAY (TV Size) (Midasmens) [White].osu"
+         music="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Monochrome HAPPY DAY (TV Size).mp3">
+          <h3 class="list-group-item-heading">Monochrome*HAPPY DAY (TV Size) [White]</h3>
+          <p class="list-group-item-text">Hanazawa Kana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MonochromeHAPPYDAYTVSizeBlack" 
+         onclick="site.beatmaps.handleClick('#MonochromeHAPPYDAYTVSizeBlack');"
+         songTitle="Monochrome*HAPPY DAY (TV Size)"
+         artist="Hanazawa Kana"
+         difficulty="Black"
+         osu="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Hanazawa Kana - MonochromeHAPPY DAY (TV Size) (Midasmens) [Black].osu"
+         music="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Monochrome HAPPY DAY (TV Size).mp3">
+          <h3 class="list-group-item-heading">Monochrome*HAPPY DAY (TV Size) [Black]</h3>
+          <p class="list-group-item-text">Hanazawa Kana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MonochromeHAPPYDAYTVSizePurple" 
+         onclick="site.beatmaps.handleClick('#MonochromeHAPPYDAYTVSizePurple');"
+         songTitle="Monochrome*HAPPY DAY (TV Size)"
+         artist="Hanazawa Kana"
+         difficulty="Purple"
+         osu="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Hanazawa Kana - MonochromeHAPPY DAY (TV Size) (Midasmens) [Purple].osu"
+         music="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Monochrome HAPPY DAY (TV Size).mp3">
+          <h3 class="list-group-item-heading">Monochrome*HAPPY DAY (TV Size) [Purple]</h3>
+          <p class="list-group-item-text">Hanazawa Kana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MonochromeHAPPYDAYTVSizeBrown" 
+         onclick="site.beatmaps.handleClick('#MonochromeHAPPYDAYTVSizeBrown');"
+         songTitle="Monochrome*HAPPY DAY (TV Size)"
+         artist="Hanazawa Kana"
+         difficulty="Brown"
+         osu="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Hanazawa Kana - MonochromeHAPPY DAY (TV Size) (Midasmens) [Brown].osu"
+         music="./103659 Hanazawa Kana - Monochrome_HAPPY DAY (TV Size)/Monochrome HAPPY DAY (TV Size).mp3">
+          <h3 class="list-group-item-heading">Monochrome*HAPPY DAY (TV Size) [Brown]</h3>
+          <p class="list-group-item-text">Hanazawa Kana</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="FuzzyBlueLightsNormal" 
+         onclick="site.beatmaps.handleClick('#FuzzyBlueLightsNormal');"
+         songTitle="Fuzzy Blue Lights"
+         artist="Owl City"
+         difficulty="Normal"
+         osu="./103954 Owl City - Fuzzy Blue Lights/Owl City - Fuzzy Blue Lights ([Luanny]) [Normal].osu"
+         music="./103954 Owl City - Fuzzy Blue Lights/Fuzzy Blue Lights.mp3">
+          <h3 class="list-group-item-heading">Fuzzy Blue Lights [Normal]</h3>
+          <p class="list-group-item-text">Owl City</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="FuzzyBlueLightsHard" 
+         onclick="site.beatmaps.handleClick('#FuzzyBlueLightsHard');"
+         songTitle="Fuzzy Blue Lights"
+         artist="Owl City"
+         difficulty="Hard"
+         osu="./103954 Owl City - Fuzzy Blue Lights/Owl City - Fuzzy Blue Lights ([Luanny]) [Hard].osu"
+         music="./103954 Owl City - Fuzzy Blue Lights/Fuzzy Blue Lights.mp3">
+          <h3 class="list-group-item-heading">Fuzzy Blue Lights [Hard]</h3>
+          <p class="list-group-item-text">Owl City</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="FuzzyBlueLightsEasy" 
+         onclick="site.beatmaps.handleClick('#FuzzyBlueLightsEasy');"
+         songTitle="Fuzzy Blue Lights"
+         artist="Owl City"
+         difficulty="Easy"
+         osu="./103954 Owl City - Fuzzy Blue Lights/Owl City - Fuzzy Blue Lights ([Luanny]) [Easy].osu"
+         music="./103954 Owl City - Fuzzy Blue Lights/Fuzzy Blue Lights.mp3">
+          <h3 class="list-group-item-heading">Fuzzy Blue Lights [Easy]</h3>
+          <p class="list-group-item-text">Owl City</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="hopeNormal" 
+         onclick="site.beatmaps.handleClick('#hopeNormal');"
+         songTitle="hope"
+         artist="07th Expansion"
+         difficulty="Normal"
+         osu="./104377 07th Expansion - hope/07th Expansion - hope (Leader) [Normal].osu"
+         music="./104377 07th Expansion - hope/hopeee.mp3">
+          <h3 class="list-group-item-heading">hope [Normal]</h3>
+          <p class="list-group-item-text">07th Expansion</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="hopeHard" 
+         onclick="site.beatmaps.handleClick('#hopeHard');"
+         songTitle="hope"
+         artist="07th Expansion"
+         difficulty="Hard"
+         osu="./104377 07th Expansion - hope/07th Expansion - hope (Leader) [Hard].osu"
+         music="./104377 07th Expansion - hope/hopeee.mp3">
+          <h3 class="list-group-item-heading">hope [Hard]</h3>
+          <p class="list-group-item-text">07th Expansion</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="GodonlyknowsSecretsoftheGoddessExtractInsane" 
+         onclick="site.beatmaps.handleClick('#GodonlyknowsSecretsoftheGoddessExtractInsane');"
+         songTitle="God only knows -Secrets of the Goddess- (Extract)"
+         artist="Oratorio The World God Only Knows"
+         difficulty="Insane"
+         osu="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract) (-Umi-) [Insane].osu"
+         music="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/God only knows -Secrets of the Goddess.mp3">
+          <h3 class="list-group-item-heading">God only knows -Secrets of the Goddess- (Extract) [Insane]</h3>
+          <p class="list-group-item-text">Oratorio The World God Only Knows</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="GodonlyknowsSecretsoftheGoddessExtractRzsNormal" 
+         onclick="site.beatmaps.handleClick('#GodonlyknowsSecretsoftheGoddessExtractRzsNormal');"
+         songTitle="God only knows -Secrets of the Goddess- (Extract)"
+         artist="Oratorio The World God Only Knows"
+         difficulty="Rz's Normal"
+         osu="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract) (-Umi-) [Rz's Normal].osu"
+         music="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/God only knows -Secrets of the Goddess.mp3">
+          <h3 class="list-group-item-heading">God only knows -Secrets of the Goddess- (Extract) [Rz's Normal]</h3>
+          <p class="list-group-item-text">Oratorio The World God Only Knows</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="GodonlyknowsSecretsoftheGoddessExtractGamusHard" 
+         onclick="site.beatmaps.handleClick('#GodonlyknowsSecretsoftheGoddessExtractGamusHard');"
+         songTitle="God only knows -Secrets of the Goddess- (Extract)"
+         artist="Oratorio The World God Only Knows"
+         difficulty="Gamu's Hard"
+         osu="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract) (-Umi-) [Gamu's Hard].osu"
+         music="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/God only knows -Secrets of the Goddess.mp3">
+          <h3 class="list-group-item-heading">God only knows -Secrets of the Goddess- (Extract) [Gamu's Hard]</h3>
+          <p class="list-group-item-text">Oratorio The World God Only Knows</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="GodonlyknowsSecretsoftheGoddessExtractEasy" 
+         onclick="site.beatmaps.handleClick('#GodonlyknowsSecretsoftheGoddessExtractEasy');"
+         songTitle="God only knows -Secrets of the Goddess- (Extract)"
+         artist="Oratorio The World God Only Knows"
+         difficulty="Easy"
+         osu="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract) (-Umi-) [Easy].osu"
+         music="./104437 Oratorio The World God Only Knows - God only knows -Secrets of the Goddess- (Extract)/God only knows -Secrets of the Goddess.mp3">
+          <h3 class="list-group-item-heading">God only knows -Secrets of the Goddess- (Extract) [Easy]</h3>
+          <p class="list-group-item-text">Oratorio The World God Only Knows</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="CircleGameTVSizeMoway" 
+         onclick="site.beatmaps.handleClick('#CircleGameTVSizeMoway');"
+         songTitle="Circle Game (TV Size)"
+         artist="Galileo Galilei"
+         difficulty="Moway"
+         osu="./105089 Galileo Galilei - Circle Game (TV Size)/Galileo Galilei - Circle Game (TV Size) (mintong89) [Moway].osu"
+         music="./105089 Galileo Galilei - Circle Game (TV Size)/Circle Game.mp3">
+          <h3 class="list-group-item-heading">Circle Game (TV Size) [Moway]</h3>
+          <p class="list-group-item-text">Galileo Galilei</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="CircleGameTVSizeHard" 
+         onclick="site.beatmaps.handleClick('#CircleGameTVSizeHard');"
+         songTitle="Circle Game (TV Size)"
+         artist="Galileo Galilei"
+         difficulty="Hard"
+         osu="./105089 Galileo Galilei - Circle Game (TV Size)/Galileo Galilei - Circle Game (TV Size) (mintong89) [Hard].osu"
+         music="./105089 Galileo Galilei - Circle Game (TV Size)/Circle Game.mp3">
+          <h3 class="list-group-item-heading">Circle Game (TV Size) [Hard]</h3>
+          <p class="list-group-item-text">Galileo Galilei</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="CircleGameTVSizeEasy" 
+         onclick="site.beatmaps.handleClick('#CircleGameTVSizeEasy');"
+         songTitle="Circle Game (TV Size)"
+         artist="Galileo Galilei"
+         difficulty="Easy"
+         osu="./105089 Galileo Galilei - Circle Game (TV Size)/Galileo Galilei - Circle Game (TV Size) (mintong89) [Easy].osu"
+         music="./105089 Galileo Galilei - Circle Game (TV Size)/Circle Game.mp3">
+          <h3 class="list-group-item-heading">Circle Game (TV Size) [Easy]</h3>
+          <p class="list-group-item-text">Galileo Galilei</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="CircleGameTVSizeNormal" 
+         onclick="site.beatmaps.handleClick('#CircleGameTVSizeNormal');"
+         songTitle="Circle Game (TV Size)"
+         artist="Galileo Galilei"
+         difficulty="Normal"
+         osu="./105089 Galileo Galilei - Circle Game (TV Size)/Galileo Galilei - Circle Game (TV Size) (mintong89) [Normal].osu"
+         music="./105089 Galileo Galilei - Circle Game (TV Size)/Circle Game.mp3">
+          <h3 class="list-group-item-heading">Circle Game (TV Size) [Normal]</h3>
+          <p class="list-group-item-text">Galileo Galilei</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="CrimeWaveNormal" 
+         onclick="site.beatmaps.handleClick('#CrimeWaveNormal');"
+         songTitle="Crime Wave"
+         artist="REDALiCE ft. Ayumi Nomiya"
+         difficulty="Normal"
+         osu="./105296 REDALiCE ft. Ayumi Nomiya - Crime Wave/ALiCE'S EMOTiON - Crime Wave (DELiS) [Normal].osu"
+         music="./105296 REDALiCE ft. Ayumi Nomiya - Crime Wave/54534209876.mp3">
+          <h3 class="list-group-item-heading">Crime Wave [Normal]</h3>
+          <p class="list-group-item-text">REDALiCE ft. Ayumi Nomiya</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="CrimeWaveLunatic" 
+         onclick="site.beatmaps.handleClick('#CrimeWaveLunatic');"
+         songTitle="Crime Wave"
+         artist="REDALiCE ft. Ayumi Nomiya"
+         difficulty="Lunatic"
+         osu="./105296 REDALiCE ft. Ayumi Nomiya - Crime Wave/REDALiCE ft. Ayumi Nomiya - Crime Wave (DELiS) [Lunatic].osu"
+         music="./105296 REDALiCE ft. Ayumi Nomiya - Crime Wave/54534209876.mp3">
+          <h3 class="list-group-item-heading">Crime Wave [Lunatic]</h3>
+          <p class="list-group-item-text">REDALiCE ft. Ayumi Nomiya</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="CrimeWaveGazelsHard" 
+         onclick="site.beatmaps.handleClick('#CrimeWaveGazelsHard');"
+         songTitle="Crime Wave"
+         artist="REDALiCE ft. Ayumi Nomiya"
+         difficulty="Gazel's Hard"
+         osu="./105296 REDALiCE ft. Ayumi Nomiya - Crime Wave/ALiCE'S EMOTiON - Crime Wave (DELiS) [Gazel's Hard].osu"
+         music="./105296 REDALiCE ft. Ayumi Nomiya - Crime Wave/54534209876.mp3">
+          <h3 class="list-group-item-heading">Crime Wave [Gazel's Hard]</h3>
+          <p class="list-group-item-text">REDALiCE ft. Ayumi Nomiya</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DimensiontripperPVVerFutsuu" 
+         onclick="site.beatmaps.handleClick('#DimensiontripperPVVerFutsuu');"
+         songTitle="Dimension tripper!!!! (PV Ver.)"
+         artist="nao"
+         difficulty="Futsuu"
+         osu="./107076 nao - Dimension tripper!!!! (PV Ver.)/nao - Dimension tripper!!!! (PV Ver.) (MMzz) [Futsuu].osu"
+         music="./107076 nao - Dimension tripper!!!! (PV Ver.)/PVOP.mp3">
+          <h3 class="list-group-item-heading">Dimension tripper!!!! (PV Ver.) [Futsuu]</h3>
+          <p class="list-group-item-text">nao</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DimensiontripperPVVerKantan" 
+         onclick="site.beatmaps.handleClick('#DimensiontripperPVVerKantan');"
+         songTitle="Dimension tripper!!!! (PV Ver.)"
+         artist="nao"
+         difficulty="Kantan"
+         osu="./107076 nao - Dimension tripper!!!! (PV Ver.)/nao - Dimension tripper!!!! (PV Ver.) (MMzz) [Kantan].osu"
+         music="./107076 nao - Dimension tripper!!!! (PV Ver.)/PVOP.mp3">
+          <h3 class="list-group-item-heading">Dimension tripper!!!! (PV Ver.) [Kantan]</h3>
+          <p class="list-group-item-text">nao</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DimensiontripperPVVerMuzukashii" 
+         onclick="site.beatmaps.handleClick('#DimensiontripperPVVerMuzukashii');"
+         songTitle="Dimension tripper!!!! (PV Ver.)"
+         artist="nao"
+         difficulty="Muzukashii"
+         osu="./107076 nao - Dimension tripper!!!! (PV Ver.)/nao - Dimension tripper!!!! (PV Ver.) (MMzz) [Muzukashii].osu"
+         music="./107076 nao - Dimension tripper!!!! (PV Ver.)/PVOP.mp3">
+          <h3 class="list-group-item-heading">Dimension tripper!!!! (PV Ver.) [Muzukashii]</h3>
+          <p class="list-group-item-text">nao</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DimensiontripperPVVerInnerOni" 
+         onclick="site.beatmaps.handleClick('#DimensiontripperPVVerInnerOni');"
+         songTitle="Dimension tripper!!!! (PV Ver.)"
+         artist="nao"
+         difficulty="Inner Oni"
+         osu="./107076 nao - Dimension tripper!!!! (PV Ver.)/nao - Dimension tripper!!!! (PV Ver.) (MMzz) [Inner Oni].osu"
+         music="./107076 nao - Dimension tripper!!!! (PV Ver.)/PVOP.mp3">
+          <h3 class="list-group-item-heading">Dimension tripper!!!! (PV Ver.) [Inner Oni]</h3>
+          <p class="list-group-item-text">nao</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DimensiontripperPVVerOni" 
+         onclick="site.beatmaps.handleClick('#DimensiontripperPVVerOni');"
+         songTitle="Dimension tripper!!!! (PV Ver.)"
+         artist="nao"
+         difficulty="Oni"
+         osu="./107076 nao - Dimension tripper!!!! (PV Ver.)/nao - Dimension tripper!!!! (PV Ver.) (MMzz) [Oni].osu"
+         music="./107076 nao - Dimension tripper!!!! (PV Ver.)/PVOP.mp3">
+          <h3 class="list-group-item-heading">Dimension tripper!!!! (PV Ver.) [Oni]</h3>
+          <p class="list-group-item-text">nao</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DearYouDearNormal" 
+         onclick="site.beatmaps.handleClick('#DearYouDearNormal');"
+         songTitle="Dear You"
+         artist="DJ Genericname"
+         difficulty="Dear Normal"
+         osu="./43466 DJ Genericname - Dear You/DJ Genericname - Dear You (Rue) [Dear Normal].osu"
+         music="./43466 DJ Genericname - Dear You/Dear You.mp3">
+          <h3 class="list-group-item-heading">Dear You [Dear Normal]</h3>
+          <p class="list-group-item-text">DJ Genericname</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DearYouDearRei" 
+         onclick="site.beatmaps.handleClick('#DearYouDearRei');"
+         songTitle="Dear You"
+         artist="DJ Genericname"
+         difficulty="Dear Rei"
+         osu="./43466 DJ Genericname - Dear You/DJ Genericname - Dear You (Rue) [Dear Rei].osu"
+         music="./43466 DJ Genericname - Dear You/Dear You.mp3">
+          <h3 class="list-group-item-heading">Dear You [Dear Rei]</h3>
+          <p class="list-group-item-text">DJ Genericname</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DearYouDearRue" 
+         onclick="site.beatmaps.handleClick('#DearYouDearRue');"
+         songTitle="Dear You"
+         artist="DJ Genericname"
+         difficulty="Dear Rue"
+         osu="./43466 DJ Genericname - Dear You/DJ Genericname - Dear You (Rue) [Dear Rue].osu"
+         music="./43466 DJ Genericname - Dear You/Dear You.mp3">
+          <h3 class="list-group-item-heading">Dear You [Dear Rue]</h3>
+          <p class="list-group-item-text">DJ Genericname</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DearYouDearEasy" 
+         onclick="site.beatmaps.handleClick('#DearYouDearEasy');"
+         songTitle="Dear You"
+         artist="DJ Genericname"
+         difficulty="Dear Easy"
+         osu="./43466 DJ Genericname - Dear You/DJ Genericname - Dear You (Rue) [Dear Easy].osu"
+         music="./43466 DJ Genericname - Dear You/Dear You.mp3">
+          <h3 class="list-group-item-heading">Dear You [Dear Easy]</h3>
+          <p class="list-group-item-text">DJ Genericname</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DearbigsisterremixverHard" 
+         onclick="site.beatmaps.handleClick('#DearbigsisterremixverHard');"
+         songTitle="Dear big sister~remix ver.~"
+         artist="24 Bit Lolitas ft. Aihara Chihiro"
+         difficulty="Hard"
+         osu="./49721 24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~/24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~ (happy30) [Hard].osu"
+         music="./49721 24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~/Dear big sisterremix ver..mp3">
+          <h3 class="list-group-item-heading">Dear big sister~remix ver.~ [Hard]</h3>
+          <p class="list-group-item-text">24 Bit Lolitas ft. Aihara Chihiro</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DearbigsisterremixverNormal" 
+         onclick="site.beatmaps.handleClick('#DearbigsisterremixverNormal');"
+         songTitle="Dear big sister~remix ver.~"
+         artist="24 Bit Lolitas ft. Aihara Chihiro"
+         difficulty="Normal"
+         osu="./49721 24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~/24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~ (happy30) [Normal].osu"
+         music="./49721 24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~/Dear big sisterremix ver..mp3">
+          <h3 class="list-group-item-heading">Dear big sister~remix ver.~ [Normal]</h3>
+          <p class="list-group-item-text">24 Bit Lolitas ft. Aihara Chihiro</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="DearbigsisterremixverCNFsEasy" 
+         onclick="site.beatmaps.handleClick('#DearbigsisterremixverCNFsEasy');"
+         songTitle="Dear big sister~remix ver.~"
+         artist="24 Bit Lolitas ft. Aihara Chihiro"
+         difficulty="CNF's Easy"
+         osu="./49721 24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~/24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~ (happy30) [CNF's Easy].osu"
+         music="./49721 24 Bit Lolitas ft. Aihara Chihiro - Dear big sister~remix ver.~/Dear big sisterremix ver..mp3">
+          <h3 class="list-group-item-heading">Dear big sister~remix ver.~ [CNF's Easy]</h3>
+          <p class="list-group-item-text">24 Bit Lolitas ft. Aihara Chihiro</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="onlymyrailgunTVsizeOnosTaikoUraOni" 
+         onclick="site.beatmaps.handleClick('#onlymyrailgunTVsizeOnosTaikoUraOni');"
+         songTitle="only my railgun (TV size)"
+         artist="fripSide"
+         difficulty="Ono's Taiko Ura Oni"
+         osu="./62852 fripSide - only my railgun (TV size)/fripSide - only my railgun (TV size) (Chewin) [Ono's Taiko Ura Oni].osu"
+         music="./62852 fripSide - only my railgun (TV size)/only my railgun.mp3">
+          <h3 class="list-group-item-heading">only my railgun (TV size) [Ono's Taiko Ura Oni]</h3>
+          <p class="list-group-item-text">fripSide</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="onlymyrailgunTVsizecRyosHard" 
+         onclick="site.beatmaps.handleClick('#onlymyrailgunTVsizecRyosHard');"
+         songTitle="only my railgun (TV size)"
+         artist="fripSide"
+         difficulty="cRyo's Hard"
+         osu="./62852 fripSide - only my railgun (TV size)/fripSide - only my railgun (TV size) (Chewin) [cRyo's Hard].osu"
+         music="./62852 fripSide - only my railgun (TV size)/only my railgun.mp3">
+          <h3 class="list-group-item-heading">only my railgun (TV size) [cRyo's Hard]</h3>
+          <p class="list-group-item-text">fripSide</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="onlymyrailgunTVsizeNormal" 
+         onclick="site.beatmaps.handleClick('#onlymyrailgunTVsizeNormal');"
+         songTitle="only my railgun (TV size)"
+         artist="fripSide"
+         difficulty="Normal"
+         osu="./62852 fripSide - only my railgun (TV size)/fripSide - only my railgun (TV size) (Chewin) [Normal].osu"
+         music="./62852 fripSide - only my railgun (TV size)/only my railgun.mp3">
+          <h3 class="list-group-item-heading">only my railgun (TV size) [Normal]</h3>
+          <p class="list-group-item-text">fripSide</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="onlymyrailgunTVsizeInsane" 
+         onclick="site.beatmaps.handleClick('#onlymyrailgunTVsizeInsane');"
+         songTitle="only my railgun (TV size)"
+         artist="fripSide"
+         difficulty="Insane"
+         osu="./62852 fripSide - only my railgun (TV size)/fripSide - only my railgun (TV size) (Chewin) [Insane].osu"
+         music="./62852 fripSide - only my railgun (TV size)/only my railgun.mp3">
+          <h3 class="list-group-item-heading">only my railgun (TV size) [Insane]</h3>
+          <p class="list-group-item-text">fripSide</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="onlymyrailgunTVsizeOnosTaikoOni" 
+         onclick="site.beatmaps.handleClick('#onlymyrailgunTVsizeOnosTaikoOni');"
+         songTitle="only my railgun (TV size)"
+         artist="fripSide"
+         difficulty="Ono's Taiko Oni"
+         osu="./62852 fripSide - only my railgun (TV size)/fripSide - only my railgun (TV size) (Chewin) [Ono's Taiko Oni].osu"
+         music="./62852 fripSide - only my railgun (TV size)/only my railgun.mp3">
+          <h3 class="list-group-item-heading">only my railgun (TV size) [Ono's Taiko Oni]</h3>
+          <p class="list-group-item-text">fripSide</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="onlymyrailgunTVsizekevincelasEasy" 
+         onclick="site.beatmaps.handleClick('#onlymyrailgunTVsizekevincelasEasy');"
+         songTitle="only my railgun (TV size)"
+         artist="fripSide"
+         difficulty="-kevincela-'s Easy"
+         osu="./62852 fripSide - only my railgun (TV size)/fripSide - only my railgun (TV size) (Chewin) [-kevincela-'s Easy].osu"
+         music="./62852 fripSide - only my railgun (TV size)/only my railgun.mp3">
+          <h3 class="list-group-item-heading">only my railgun (TV size) [-kevincela-'s Easy]</h3>
+          <p class="list-group-item-text">fripSide</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WitchcraftRAIN" 
+         onclick="site.beatmaps.handleClick('#WitchcraftRAIN');"
+         songTitle="Witchcraft"
+         artist="Pendulum"
+         difficulty="RAIN"
+         osu="./69076 Pendulum - Witchcraft/Pendulum - Witchcraft (Quiz-chan) [RAIN].osu"
+         music="./69076 Pendulum - Witchcraft/12 - Witchcraft.mp3">
+          <h3 class="list-group-item-heading">Witchcraft [RAIN]</h3>
+          <p class="list-group-item-text">Pendulum</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WitchcraftEscalation" 
+         onclick="site.beatmaps.handleClick('#WitchcraftEscalation');"
+         songTitle="Witchcraft"
+         artist="Pendulum"
+         difficulty="Escalation"
+         osu="./69076 Pendulum - Witchcraft/Pendulum - Witchcraft (Quiz-chan) [Escalation].osu"
+         music="./69076 Pendulum - Witchcraft/12 - Witchcraft.mp3">
+          <h3 class="list-group-item-heading">Witchcraft [Escalation]</h3>
+          <p class="list-group-item-text">Pendulum</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WitchcraftHard" 
+         onclick="site.beatmaps.handleClick('#WitchcraftHard');"
+         songTitle="Witchcraft"
+         artist="Pendulum"
+         difficulty="Hard"
+         osu="./69076 Pendulum - Witchcraft/Pendulum - Witchcraft (Quiz-chan) [Hard].osu"
+         music="./69076 Pendulum - Witchcraft/12 - Witchcraft.mp3">
+          <h3 class="list-group-item-heading">Witchcraft [Hard]</h3>
+          <p class="list-group-item-text">Pendulum</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WitchcraftEasy" 
+         onclick="site.beatmaps.handleClick('#WitchcraftEasy');"
+         songTitle="Witchcraft"
+         artist="Pendulum"
+         difficulty="Easy"
+         osu="./69076 Pendulum - Witchcraft/Pendulum - Witchcraft (Quiz-chan) [Easy].osu"
+         music="./69076 Pendulum - Witchcraft/12 - Witchcraft.mp3">
+          <h3 class="list-group-item-heading">Witchcraft [Easy]</h3>
+          <p class="list-group-item-text">Pendulum</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WitchcraftNormal" 
+         onclick="site.beatmaps.handleClick('#WitchcraftNormal');"
+         songTitle="Witchcraft"
+         artist="Pendulum"
+         difficulty="Normal"
+         osu="./69076 Pendulum - Witchcraft/Pendulum - Witchcraft (Quiz-chan) [Normal].osu"
+         music="./69076 Pendulum - Witchcraft/12 - Witchcraft.mp3">
+          <h3 class="list-group-item-heading">Witchcraft [Normal]</h3>
+          <p class="list-group-item-text">Pendulum</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="NagisanoKoakumaLovelyRadioJingsOni" 
+         onclick="site.beatmaps.handleClick('#NagisanoKoakumaLovelyRadioJingsOni');"
+         songTitle="Nagisa no Koakuma Lovely~Radio"
+         artist="Natsuiro Bikini no Prim"
+         difficulty="Jing's Oni"
+         osu="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio (CSY the corrupt) [Jing's Oni].osu"
+         music="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/07 - .mp3">
+          <h3 class="list-group-item-heading">Nagisa no Koakuma Lovely~Radio [Jing's Oni]</h3>
+          <p class="list-group-item-text">Natsuiro Bikini no Prim</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="NagisanoKoakumaLovelyRadioAdvanced" 
+         onclick="site.beatmaps.handleClick('#NagisanoKoakumaLovelyRadioAdvanced');"
+         songTitle="Nagisa no Koakuma Lovely~Radio"
+         artist="Natsuiro Bikini no Prim"
+         difficulty="Advanced"
+         osu="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio (CSY the corrupt) [Advanced].osu"
+         music="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/07 - .mp3">
+          <h3 class="list-group-item-heading">Nagisa no Koakuma Lovely~Radio [Advanced]</h3>
+          <p class="list-group-item-text">Natsuiro Bikini no Prim</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="NagisanoKoakumaLovelyRadioJingsMuzukashii" 
+         onclick="site.beatmaps.handleClick('#NagisanoKoakumaLovelyRadioJingsMuzukashii');"
+         songTitle="Nagisa no Koakuma Lovely~Radio"
+         artist="Natsuiro Bikini no Prim"
+         difficulty="Jing's Muzukashii"
+         osu="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio (CSY the corrupt) [Jing's Muzukashii].osu"
+         music="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/07 - .mp3">
+          <h3 class="list-group-item-heading">Nagisa no Koakuma Lovely~Radio [Jing's Muzukashii]</h3>
+          <p class="list-group-item-text">Natsuiro Bikini no Prim</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="NagisanoKoakumaLovelyRadioExtreme" 
+         onclick="site.beatmaps.handleClick('#NagisanoKoakumaLovelyRadioExtreme');"
+         songTitle="Nagisa no Koakuma Lovely~Radio"
+         artist="Natsuiro Bikini no Prim"
+         difficulty="Extreme"
+         osu="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio (CSY the corrupt) [Extreme].osu"
+         music="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/07 - .mp3">
+          <h3 class="list-group-item-heading">Nagisa no Koakuma Lovely~Radio [Extreme]</h3>
+          <p class="list-group-item-text">Natsuiro Bikini no Prim</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="NagisanoKoakumaLovelyRadioBasic" 
+         onclick="site.beatmaps.handleClick('#NagisanoKoakumaLovelyRadioBasic');"
+         songTitle="Nagisa no Koakuma Lovely~Radio"
+         artist="Natsuiro Bikini no Prim"
+         difficulty="Basic"
+         osu="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio (CSY the corrupt) [Basic].osu"
+         music="./76709 Natsuiro Bikini no Prim - Nagisa no Koakuma Lovely~Radio/07 - .mp3">
+          <h3 class="list-group-item-heading">Nagisa no Koakuma Lovely~Radio [Basic]</h3>
+          <p class="list-group-item-text">Natsuiro Bikini no Prim</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeSatensInsane" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeSatensInsane');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Saten's Insane"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Saten's Insane].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Saten's Insane]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeRain" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeRain');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Rain"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Rain].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Rain]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeXinelysEasy" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeXinelysEasy');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Xinely's Easy"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Xinely's Easy].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Xinely's Easy]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeHard" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeHard');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Hard"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Hard].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Hard]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeNormal" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeNormal');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Normal"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Normal].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Normal]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizewtbsOni" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizewtbsOni');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="wtb's Oni"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [wtb's Oni].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [wtb's Oni]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeEntozers4KEZ" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeEntozers4KEZ');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Entozer's 4K EZ"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Entozer's 4K EZ].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Entozer's 4K EZ]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeEntozers7KMX" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeEntozers7KMX');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Entozer's 7K MX"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Entozer's 7K MX].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Entozer's 7K MX]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeNatsusInsane" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeNatsusInsane');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="Natsu's Insane"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [Natsu's Insane].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [Natsu's Insane]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizewtbsMuzukashii" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizewtbsMuzukashii');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="wtb's Muzukashii"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [wtb's Muzukashii].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [wtb's Muzukashii]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizeDSsHard" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizeDSsHard');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="DS's Hard"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [DS's Hard].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [DS's Hard]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="BurstTheGravityTVSizenewtoniorock8sSalad" 
+         onclick="site.beatmaps.handleClick('#BurstTheGravityTVSizenewtoniorock8sSalad');"
+         songTitle="Burst The Gravity (TV Size)"
+         artist="ALTIMA"
+         difficulty="newtoniorock8's Salad"
+         osu="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity (TV Size) (Zeroarg) [newtoniorock8's Salad].osu"
+         music="./79038 ALTIMA - Burst The Gravity (TV Size)/ALTIMA - Burst The Gravity.mp3">
+          <h3 class="list-group-item-heading">Burst The Gravity (TV Size) [newtoniorock8's Salad]</h3>
+          <p class="list-group-item-text">ALTIMA</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SenoTVSizeGamusHard" 
+         onclick="site.beatmaps.handleClick('#SenoTVSizeGamusHard');"
+         songTitle="Se-no! (TV Size)"
+         artist="Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)"
+         difficulty="Gamu's Hard"
+         osu="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size) (alacat) [Gamu's Hard].osu"
+         music="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/yuyuyu.mp3">
+          <h3 class="list-group-item-heading">Se-no! (TV Size) [Gamu's Hard]</h3>
+          <p class="list-group-item-text">Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SenoTVSizeNormal" 
+         onclick="site.beatmaps.handleClick('#SenoTVSizeNormal');"
+         songTitle="Se-no! (TV Size)"
+         artist="Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)"
+         difficulty="Normal"
+         osu="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size) (alacat) [Normal].osu"
+         music="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/yuyuyu.mp3">
+          <h3 class="list-group-item-heading">Se-no! (TV Size) [Normal]</h3>
+          <p class="list-group-item-text">Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SenoTVSizekusanosInsane" 
+         onclick="site.beatmaps.handleClick('#SenoTVSizekusanosInsane');"
+         songTitle="Se-no! (TV Size)"
+         artist="Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)"
+         difficulty="kusano's Insane"
+         osu="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size) (alacat) [kusano's Insane].osu"
+         music="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/yuyuyu.mp3">
+          <h3 class="list-group-item-heading">Se-no! (TV Size) [kusano's Insane]</h3>
+          <p class="list-group-item-text">Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SenoTVSizeInsane" 
+         onclick="site.beatmaps.handleClick('#SenoTVSizeInsane');"
+         songTitle="Se-no! (TV Size)"
+         artist="Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)"
+         difficulty="Insane"
+         osu="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size) (alacat) [Insane].osu"
+         music="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/yuyuyu.mp3">
+          <h3 class="list-group-item-heading">Se-no! (TV Size) [Insane]</h3>
+          <p class="list-group-item-text">Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SenoTVSize249sEasy" 
+         onclick="site.beatmaps.handleClick('#SenoTVSize249sEasy');"
+         songTitle="Se-no! (TV Size)"
+         artist="Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)"
+         difficulty="249's Easy"
+         osu="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size) (alacat) [249's Easy].osu"
+         music="./93256 Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa) - Se-no! (TV Size)/yuyuyu.mp3">
+          <h3 class="list-group-item-heading">Se-no! (TV Size) [249's Easy]</h3>
+          <p class="list-group-item-text">Jouhou Shoribu (Ookubo Rumi, Tsuda Minami, Taneda Risa)</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MermaidgirlAkibaKoubouMIXLV5" 
+         onclick="site.beatmaps.handleClick('#MermaidgirlAkibaKoubouMIXLV5');"
+         songTitle="Mermaid girl -Akiba Koubou MIX-"
+         artist="Remixed by DJ Command"
+         difficulty="LV.5"
+         osu="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX- (Lieselotte) [LV.5].osu"
+         music="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Mermaid girl -Akiba Koubou MIX-.mp3">
+          <h3 class="list-group-item-heading">Mermaid girl -Akiba Koubou MIX- [LV.5]</h3>
+          <p class="list-group-item-text">Remixed by DJ Command</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MermaidgirlAkibaKoubouMIXLV10" 
+         onclick="site.beatmaps.handleClick('#MermaidgirlAkibaKoubouMIXLV10');"
+         songTitle="Mermaid girl -Akiba Koubou MIX-"
+         artist="Remixed by DJ Command"
+         difficulty="LV.10"
+         osu="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX- (Lieselotte) [LV.10].osu"
+         music="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Mermaid girl -Akiba Koubou MIX-.mp3">
+          <h3 class="list-group-item-heading">Mermaid girl -Akiba Koubou MIX- [LV.10]</h3>
+          <p class="list-group-item-text">Remixed by DJ Command</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MermaidgirlAkibaKoubouMIXLV16" 
+         onclick="site.beatmaps.handleClick('#MermaidgirlAkibaKoubouMIXLV16');"
+         songTitle="Mermaid girl -Akiba Koubou MIX-"
+         artist="Remixed by DJ Command"
+         difficulty="LV.16"
+         osu="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX- (Lieselotte) [LV.16].osu"
+         music="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Mermaid girl -Akiba Koubou MIX-.mp3">
+          <h3 class="list-group-item-heading">Mermaid girl -Akiba Koubou MIX- [LV.16]</h3>
+          <p class="list-group-item-text">Remixed by DJ Command</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="MermaidgirlAkibaKoubouMIXLV24" 
+         onclick="site.beatmaps.handleClick('#MermaidgirlAkibaKoubouMIXLV24');"
+         songTitle="Mermaid girl -Akiba Koubou MIX-"
+         artist="Remixed by DJ Command"
+         difficulty="LV.24"
+         osu="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX- (Lieselotte) [LV.24].osu"
+         music="./95609 Remixed by DJ Command - Mermaid girl -Akiba Koubou MIX-/Mermaid girl -Akiba Koubou MIX-.mp3">
+          <h3 class="list-group-item-heading">Mermaid girl -Akiba Koubou MIX- [LV.24]</h3>
+          <p class="list-group-item-text">Remixed by DJ Command</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="JustAwakeTVSizekevincelasInsane" 
+         onclick="site.beatmaps.handleClick('#JustAwakeTVSizekevincelasInsane');"
+         songTitle="Just Awake (TV Size)"
+         artist="Fear, and Loathing in Las Vegas"
+         difficulty="-kevincela-'s Insane"
+         osu="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake (TV Size) (Leader) [-kevincela-'s Insane].osu"
+         music="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake.mp3">
+          <h3 class="list-group-item-heading">Just Awake (TV Size) [-kevincela-'s Insane]</h3>
+          <p class="list-group-item-text">Fear, and Loathing in Las Vegas</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="JustAwakeTVSizeLallysEasy" 
+         onclick="site.beatmaps.handleClick('#JustAwakeTVSizeLallysEasy');"
+         songTitle="Just Awake (TV Size)"
+         artist="Fear, and Loathing in Las Vegas"
+         difficulty="Lally's Easy"
+         osu="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake (TV Size) (Leader) [Lally's Easy].osu"
+         music="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake.mp3">
+          <h3 class="list-group-item-heading">Just Awake (TV Size) [Lally's Easy]</h3>
+          <p class="list-group-item-text">Fear, and Loathing in Las Vegas</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="JustAwakeTVSizeHard" 
+         onclick="site.beatmaps.handleClick('#JustAwakeTVSizeHard');"
+         songTitle="Just Awake (TV Size)"
+         artist="Fear, and Loathing in Las Vegas"
+         difficulty="Hard"
+         osu="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake (TV Size) (Leader) [Hard].osu"
+         music="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake.mp3">
+          <h3 class="list-group-item-heading">Just Awake (TV Size) [Hard]</h3>
+          <p class="list-group-item-text">Fear, and Loathing in Las Vegas</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="JustAwakeTVSizeSaten" 
+         onclick="site.beatmaps.handleClick('#JustAwakeTVSizeSaten');"
+         songTitle="Just Awake (TV Size)"
+         artist="Fear, and Loathing in Las Vegas"
+         difficulty="Saten"
+         osu="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake (TV Size) (Leader) [Saten].osu"
+         music="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake.mp3">
+          <h3 class="list-group-item-heading">Just Awake (TV Size) [Saten]</h3>
+          <p class="list-group-item-text">Fear, and Loathing in Las Vegas</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="JustAwakeTVSizeNormal" 
+         onclick="site.beatmaps.handleClick('#JustAwakeTVSizeNormal');"
+         songTitle="Just Awake (TV Size)"
+         artist="Fear, and Loathing in Las Vegas"
+         difficulty="Normal"
+         osu="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake (TV Size) (Leader) [Normal].osu"
+         music="./95638 Fear, and Loathing in Las Vegas - Just Awake (TV Size)/Fear, and Loathing in Las Vegas - Just Awake.mp3">
+          <h3 class="list-group-item-heading">Just Awake (TV Size) [Normal]</h3>
+          <p class="list-group-item-text">Fear, and Loathing in Las Vegas</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="HitorishizukaDelisNormal" 
+         onclick="site.beatmaps.handleClick('#HitorishizukaDelisNormal');"
+         songTitle="Hitorishizuka"
+         artist="senya"
+         difficulty="Deli's Normal"
+         osu="./95839 senya - Hitorishizuka/senya - Hitorishizuka (Satellite) [Deli's Normal].osu"
+         music="./95839 senya - Hitorishizuka/Vocal.mp3">
+          <h3 class="list-group-item-heading">Hitorishizuka [Deli's Normal]</h3>
+          <p class="list-group-item-text">senya</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="HitorishizukaSatellite" 
+         onclick="site.beatmaps.handleClick('#HitorishizukaSatellite');"
+         songTitle="Hitorishizuka"
+         artist="senya"
+         difficulty="Satellite"
+         osu="./95839 senya - Hitorishizuka/senya - Hitorishizuka (Satellite) [Satellite].osu"
+         music="./95839 senya - Hitorishizuka/Vocal.mp3">
+          <h3 class="list-group-item-heading">Hitorishizuka [Satellite]</h3>
+          <p class="list-group-item-text">senya</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="HitorishizukaForseensHard" 
+         onclick="site.beatmaps.handleClick('#HitorishizukaForseensHard');"
+         songTitle="Hitorishizuka"
+         artist="senya"
+         difficulty="Forseen's Hard"
+         osu="./95839 senya - Hitorishizuka/senya - Hitorishizuka (Satellite) [Forseen's Hard].osu"
+         music="./95839 senya - Hitorishizuka/Vocal.mp3">
+          <h3 class="list-group-item-heading">Hitorishizuka [Forseen's Hard]</h3>
+          <p class="list-group-item-text">senya</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SuperFunFun" 
+         onclick="site.beatmaps.handleClick('#SuperFunFun');"
+         songTitle="Super-Fun"
+         artist="Ronald Jenkees"
+         difficulty="Fun"
+         osu="./95931 Ronald Jenkees - Super-Fun/Ronald Jenkees - Super-Fun (tieff) [Fun].osu"
+         music="./95931 Ronald Jenkees - Super-Fun/Ronald_Jenkees_-_Super-Fun.mp3">
+          <h3 class="list-group-item-heading">Super-Fun [Fun]</h3>
+          <p class="list-group-item-text">Ronald Jenkees</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SuperFunBoring" 
+         onclick="site.beatmaps.handleClick('#SuperFunBoring');"
+         songTitle="Super-Fun"
+         artist="Ronald Jenkees"
+         difficulty="Boring"
+         osu="./95931 Ronald Jenkees - Super-Fun/Ronald Jenkees - Super-Fun (tieff) [Boring].osu"
+         music="./95931 Ronald Jenkees - Super-Fun/Ronald_Jenkees_-_Super-Fun.mp3">
+          <h3 class="list-group-item-heading">Super-Fun [Boring]</h3>
+          <p class="list-group-item-text">Ronald Jenkees</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="SuperFunRelaxing" 
+         onclick="site.beatmaps.handleClick('#SuperFunRelaxing');"
+         songTitle="Super-Fun"
+         artist="Ronald Jenkees"
+         difficulty="Relaxing"
+         osu="./95931 Ronald Jenkees - Super-Fun/Ronald Jenkees - Super-Fun (tieff) [Relaxing].osu"
+         music="./95931 Ronald Jenkees - Super-Fun/Ronald_Jenkees_-_Super-Fun.mp3">
+          <h3 class="list-group-item-heading">Super-Fun [Relaxing]</h3>
+          <p class="list-group-item-text">Ronald Jenkees</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WhatMyCutieMarkIsTellingMeRemixInsane" 
+         onclick="site.beatmaps.handleClick('#WhatMyCutieMarkIsTellingMeRemixInsane');"
+         songTitle="What My Cutie Mark Is Telling Me (Remix)"
+         artist="Sim Gretina"
+         difficulty="Insane"
+         osu="./97787 Sim Gretina - What My Cutie Mark Is Telling Me (Remix)/Sim Gretina - What My Cutie Mark Is Telling Me (Remix) (ztrot) [Insane].osu"
+         music="./97787 Sim Gretina - What My Cutie Mark Is Telling Me (Remix)/What my cutie mark is telling me.mp3">
+          <h3 class="list-group-item-heading">What My Cutie Mark Is Telling Me (Remix) [Insane]</h3>
+          <p class="list-group-item-text">Sim Gretina</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WhatMyCutieMarkIsTellingMeRemixNormal" 
+         onclick="site.beatmaps.handleClick('#WhatMyCutieMarkIsTellingMeRemixNormal');"
+         songTitle="What My Cutie Mark Is Telling Me (Remix)"
+         artist="Sim Gretina"
+         difficulty="Normal"
+         osu="./97787 Sim Gretina - What My Cutie Mark Is Telling Me (Remix)/Sim Gretina - What My Cutie Mark Is Telling Me (Remix) (ztrot) [Normal].osu"
+         music="./97787 Sim Gretina - What My Cutie Mark Is Telling Me (Remix)/What my cutie mark is telling me.mp3">
+          <h3 class="list-group-item-heading">What My Cutie Mark Is Telling Me (Remix) [Normal]</h3>
+          <p class="list-group-item-text">Sim Gretina</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="WhatMyCutieMarkIsTellingMeRemixCDFAsHard" 
+         onclick="site.beatmaps.handleClick('#WhatMyCutieMarkIsTellingMeRemixCDFAsHard');"
+         songTitle="What My Cutie Mark Is Telling Me (Remix)"
+         artist="Sim Gretina"
+         difficulty="CDFA's Hard"
+         osu="./97787 Sim Gretina - What My Cutie Mark Is Telling Me (Remix)/Sim Gretina - What My Cutie Mark Is Telling Me (Remix) (ztrot) [CDFA's Hard].osu"
+         music="./97787 Sim Gretina - What My Cutie Mark Is Telling Me (Remix)/What my cutie mark is telling me.mp3">
+          <h3 class="list-group-item-heading">What My Cutie Mark Is Telling Me (Remix) [CDFA's Hard]</h3>
+          <p class="list-group-item-text">Sim Gretina</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="TimeBombfeatVeelaBoyinabandTime" 
+         onclick="site.beatmaps.handleClick('#TimeBombfeatVeelaBoyinabandTime');"
+         songTitle="Time Bomb (feat. Veela & Boyinaband)"
+         artist="Feint"
+         difficulty="Time"
+         osu="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/Feint - Time Bomb (feat. Veela & Boyinaband) (vipto) [Time].osu"
+         music="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/time.mp3">
+          <h3 class="list-group-item-heading">Time Bomb (feat. Veela & Boyinaband) [Time]</h3>
+          <p class="list-group-item-text">Feint</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="TimeBombfeatVeelaBoyinabandEasy" 
+         onclick="site.beatmaps.handleClick('#TimeBombfeatVeelaBoyinabandEasy');"
+         songTitle="Time Bomb (feat. Veela & Boyinaband)"
+         artist="Feint"
+         difficulty="Easy"
+         osu="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/Feint - Time Bomb (feat. Veela & Boyinaband) (vipto) [Easy].osu"
+         music="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/time.mp3">
+          <h3 class="list-group-item-heading">Time Bomb (feat. Veela & Boyinaband) [Easy]</h3>
+          <p class="list-group-item-text">Feint</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="TimeBombfeatVeelaBoyinabandHard" 
+         onclick="site.beatmaps.handleClick('#TimeBombfeatVeelaBoyinabandHard');"
+         songTitle="Time Bomb (feat. Veela & Boyinaband)"
+         artist="Feint"
+         difficulty="Hard"
+         osu="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/Feint - Time Bomb (feat. Veela & Boyinaband) (vipto) [Hard].osu"
+         music="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/time.mp3">
+          <h3 class="list-group-item-heading">Time Bomb (feat. Veela & Boyinaband) [Hard]</h3>
+          <p class="list-group-item-text">Feint</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="TimeBombfeatVeelaBoyinabandNormal" 
+         onclick="site.beatmaps.handleClick('#TimeBombfeatVeelaBoyinabandNormal');"
+         songTitle="Time Bomb (feat. Veela & Boyinaband)"
+         artist="Feint"
+         difficulty="Normal"
+         osu="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/Feint - Time Bomb (feat. Veela & Boyinaband) (vipto) [Normal].osu"
+         music="./98842 Feint - Time Bomb (feat. Veela & Boyinaband)/time.mp3">
+          <h3 class="list-group-item-heading">Time Bomb (feat. Veela & Boyinaband) [Normal]</h3>
+          <p class="list-group-item-text">Feint</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="IAnother" 
+         onclick="site.beatmaps.handleClick('#IAnother');"
+         songTitle="I"
+         artist="LeaF"
+         difficulty="Another"
+         osu="./99244 LeaF - I/LeaF - I (Maddy) [Another].osu"
+         music="./99244 LeaF - I/I_leaf.mp3">
+          <h3 class="list-group-item-heading">I [Another]</h3>
+          <p class="list-group-item-text">LeaF</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="IStandard" 
+         onclick="site.beatmaps.handleClick('#IStandard');"
+         songTitle="I"
+         artist="LeaF"
+         difficulty="Standard"
+         osu="./99244 LeaF - I/LeaF - I (Maddy) [Standard].osu"
+         music="./99244 LeaF - I/I_leaf.mp3">
+          <h3 class="list-group-item-heading">I [Standard]</h3>
+          <p class="list-group-item-text">LeaF</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="IBeginner" 
+         onclick="site.beatmaps.handleClick('#IBeginner');"
+         songTitle="I"
+         artist="LeaF"
+         difficulty="Beginner"
+         osu="./99244 LeaF - I/LeaF - I (Maddy) [Beginner].osu"
+         music="./99244 LeaF - I/I_leaf.mp3">
+          <h3 class="list-group-item-heading">I [Beginner]</h3>
+          <p class="list-group-item-text">LeaF</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="ITerror" 
+         onclick="site.beatmaps.handleClick('#ITerror');"
+         songTitle="I"
+         artist="LeaF"
+         difficulty="Terror"
+         osu="./99244 LeaF - I/LeaF - I (Maddy) [Terror].osu"
+         music="./99244 LeaF - I/I_leaf.mp3">
+          <h3 class="list-group-item-heading">I [Terror]</h3>
+          <p class="list-group-item-text">LeaF</p>
+        </a>
+
+         
+        <a href="#" class="list-group-item" id="IHyper" 
+         onclick="site.beatmaps.handleClick('#IHyper');"
+         songTitle="I"
+         artist="LeaF"
+         difficulty="Hyper"
+         osu="./99244 LeaF - I/LeaF - I (Maddy) [Hyper].osu"
+         music="./99244 LeaF - I/I_leaf.mp3">
+          <h3 class="list-group-item-heading">I [Hyper]</h3>
+          <p class="list-group-item-text">LeaF</p>
+        </a>
+        </ul>
+        </div>
+
+        <!-- options tab -->
+        <div class="tab-pane fade" id="options">
+        <h2>Options</h2>
+        <form>
+          <fieldset>
+            <div class="form-group">
+              <label for="options_width">Width</label>
+              <input type="number" class="form-control" id="options_width">
+            </div>
+            <div class="form-group">
+              <label for="options_height">Height</label>
+              <input type="number" class="form-control" id="options_height">
+            </div>
+            <div class="form-group">
+              <label for="options_offset">Music offset (ms)</label>
+              <input type="number" class="form-control" id="options_offset">
+            </div>
+            <div class="form-group">
+              <label for="options_key_x">Click key 1:</label>
+              <input type="text" maxlength="0" class="form-control" id="options_key_x">
+            </div>
+            <div class="form-group">
+              <label for="options_key_z">Click key 2:</label>
+              <input type="text" maxlength="0" class="form-control" id="options_key_z">
+            </div>
+          </fieldset>
+        </form>
+        </div>
+
+        <!-- changelog tab -->
+        <div class="tab-pane fade" id="changelog">
+        <h2>Changelog</h2>
+          <h3>August 11, 2013</h3>
+          <ul>
+            <li>Fixed bug with arrow direction.</li>
+            <li>Only the current beat is clickable.</li>
+            <li>Can choose another song after finishing one.</li>
+            <li>Slider tick bug fix.</li>
+            <li>Basic beatmap selection!</li>
+            <li>Can pause with ESC.</li>
+            <li>Slider ticks add to combo.</li>
+            <li>Options tab written.</li>
+            <li>Website redesign.</li>
+            <li>Adjusted tweens and timing method to make sliders
+                and approach circles more smooth.</li>
+            <li>Progress displayed on loading screen.</li>
+            <li>Uses osu! bitmap font.</li>
+            <li>Rudimentary spinners implemented.</li>
+            <li>Hitobjects centered correctly.</li>
+            <li>Fixed audio loading issue.</li>
+            <li>z and x keys can be used.</li>
+            <li>Slider follow circles don't rotate.</li>
+          </ul>
+             
+          <h3>Aug 1, 2013</h3>
+          <ul>
+            <li>Sliders look and behave nearly identically to osu! sliders.</li>
+            <li>Assets have been compressed to reduce loading time.</li>
+            <li>Right clicks are registered.</li>
+          </ul>
+             
+          <h3>Jul 28, 2013</h3>
+          <ul>
+            <li>Launched osujs!</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p class="text-muted">
+          Graphics and sound effects taken from <a href="http://osu.ppy.sh">osu!</a> with permission from peppy.
+          <br>
+          osujs! uses the <a href="http://createjs.com">CreateJS</a> library.
+        </p>
+      </footer>
+    </div>
+
+    <script src="js/dependencies.js"></script>
+    <script src="js/osu.min.js"></script>
+  </body>
+
+</html>
+

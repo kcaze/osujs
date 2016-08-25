@@ -1,0 +1,5 @@
+#!/bin/sh
+
+jshint src
+cat src/*.js > js/osu.js
+cat src/sitejs/*.js > js/site.js

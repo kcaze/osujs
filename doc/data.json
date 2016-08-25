@@ -1,0 +1,230 @@
+{
+    "project": {
+        "name": "osujs!",
+        "description": "An implementation of osu! in Javascript.",
+        "version": "Andromeda 1",
+        "url": "nagisa.stanford.edu/osu",
+        "logo": "http://nagisa.stanford.edu/osu/images/osulogo.png"
+    },
+    "files": {
+        "src/beat.js": {
+            "name": "src/beat.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/beatmap.js": {
+            "name": "src/beatmap.js",
+            "modules": {},
+            "classes": {
+                "Beatmap": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/bezier.js": {
+            "name": "src/bezier.js",
+            "modules": {},
+            "classes": {
+                "Bezier": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/initialize.js": {
+            "name": "src/initialize.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/slider.js": {
+            "name": "src/slider.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Beatmap": {
+            "name": "Beatmap",
+            "shortname": "Beatmap",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/beatmap.js",
+            "line": 1
+        },
+        "Bezier": {
+            "name": "Bezier",
+            "shortname": "Bezier",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/bezier.js",
+            "line": 1,
+            "description": "Simple Bezier class used for drawing Bezier curves of arbitrarily many\ncontrol points.",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/beat.js",
+            "line": 24,
+            "description": "FIXME: This function should be removed.",
+            "itemtype": "method",
+            "name": "score",
+            "class": "Beatmap"
+        },
+        {
+            "file": "src/beat.js",
+            "line": 34,
+            "description": "Sets up approachCircle.",
+            "itemtype": "method",
+            "name": "begin",
+            "class": "Beatmap"
+        },
+        {
+            "file": "src/beat.js",
+            "line": 59,
+            "description": "FIXME: rename as end()\nCleans up beat.",
+            "itemtype": "method",
+            "name": "die",
+            "class": "Beatmap"
+        },
+        {
+            "file": "src/beat.js",
+            "line": 77,
+            "description": "Returns a hitcircle bitmap.",
+            "itemtype": "method",
+            "name": "HitCircle",
+            "class": "Beatmap"
+        },
+        {
+            "file": "src/beat.js",
+            "line": 111,
+            "description": "Returns an approachcircle bitmap.",
+            "itemtype": "method",
+            "name": "ApproachCircle",
+            "class": "Beatmap"
+        },
+        {
+            "file": "src/bezier.js",
+            "line": 26,
+            "description": "Takes a list of points and splits the Bezier curve in half, returning a pair\nof arrays containing the control points for the two halves. Uses De\nCasteljau's algorithm to split.",
+            "itemtype": "method",
+            "name": "split",
+            "params": [
+                {
+                    "name": "points",
+                    "description": "An array of control points.",
+                    "type": "Array"
+                }
+            ],
+            "class": "Bezier"
+        },
+        {
+            "file": "src/bezier.js",
+            "line": 52,
+            "description": "Returns an array of points that form a linear approximation of the Bezier\ncurve.",
+            "itemtype": "method",
+            "name": "approximate",
+            "params": [
+                {
+                    "name": "points",
+                    "description": "(optional) Defaults to the Bezier object's points.",
+                    "type": "Array"
+                }
+            ],
+            "class": "Bezier"
+        },
+        {
+            "file": "src/bezier.js",
+            "line": 72,
+            "description": "Returns the point on the curve at time t.",
+            "itemtype": "method",
+            "name": "point",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "Bezier"
+        },
+        {
+            "file": "src/bezier.js",
+            "line": 89,
+            "description": "Returns the tangent velocity vector of the curve at time t.",
+            "itemtype": "method",
+            "name": "tangent",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "Bezier"
+        },
+        {
+            "file": "src/bezier.js",
+            "line": 109,
+            "description": "Returns the angle (in degrees) of the tangent velocity vector of the curve at time t.",
+            "itemtype": "method",
+            "name": "angle",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "Bezier"
+        },
+        {
+            "file": "src/initialize.js",
+            "line": 1,
+            "description": "Initializes osujs, setting up the stage with the specified canvas dimensions and fps.",
+            "itemtype": "method",
+            "name": "initialize",
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "The id of the canvas element that osujs will draw to.",
+                    "type": "String"
+                },
+                {
+                    "name": "fps",
+                    "description": "Optional parameter to specify the fps for osujs to run at (defaults to 120).",
+                    "type": "Number"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "src/slider.js",
+            "line": 124,
+            "description": "Creates a reverse arrow.",
+            "itemtype": "method",
+            "name": "createArrow",
+            "params": [
+                {
+                    "name": "position",
+                    "description": "0 or 1 depending on whether this is a head arrow or\ntail arrow.",
+                    "type": "Bool"
+                }
+            ],
+            "class": ""
+        }
+    ],
+    "warnings": []
+}

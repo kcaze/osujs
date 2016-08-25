@@ -1,0 +1,33 @@
+1. Move to newest versions of createJS and jQuery
+2. Figure out which part of the old TODO is still relevant
+
+----------OLD-----------
+Bugs:
+-Slider ticks near end of sliders shouldn't appear.
+-Spinner not finishing.
+
+Beatmaps with problems:
+-Last slider in circle game [easy] fails.
+
+Antlia release:
+-Sliders need black bg.
+
+Bugs:
+-Options menu sometimes doesn't work?
+-Continue working on FIXMEs
+
+Big New Features:
+-HP bar + figure out life drain algorithm
+-Auto and Hidden mods
+
+Small New Features:
+-Skip button
+-Retry song on pause menu
+-Click on osu! logo brings you to select beatmap if you haven't selected one. Or have a splash page where you direct ppl to select a beatmap.
+-Backgrounds for beatmaps
+
+Difficulty technical features:
+-Use web workers (and maybe parallel.js) in order to do multicore processing / threading for processing sliders.
+
+Unknown:
+-Is there a problem with the timing?
